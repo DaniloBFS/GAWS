@@ -214,16 +214,16 @@ export function PopupWidget() {
                           htmlFor="message"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                         >
-                          Your Message
+                          Sua mensagem
                         </label>
 
                         <textarea
                           rows={4}
                           id="message"
                           {...register("message", {
-                            required: "Enter your Message",
+                            required: "Digite sua mensagem",
                           })}
-                          placeholder="Your Message"
+                          placeholder="Sua mensagem"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
                             errors.message
                               ? "border-red-600 focus:border-red-600 ring-red-100"
@@ -264,7 +264,7 @@ export function PopupWidget() {
                               ></path>
                             </svg>
                           ) : (
-                            "Send Message"
+                            "Enviar mensagem"
                           )}
                         </button>
                       </div>
@@ -280,7 +280,7 @@ export function PopupWidget() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Web3Forms
+                            D&Q
                           </a>
                         </span>
                       </p>
@@ -304,14 +304,14 @@ export function PopupWidget() {
                         />
                       </svg>
                       <h3 className="py-5 text-xl text-green-500">
-                        Message sent successfully
+                          Mensagem enviada!
                       </h3>
                       <p className="text-gray-700 md:px-3">{Message}</p>
                       <button
                         className="mt-6 text-indigo-600 focus:outline-none"
                         onClick={() => reset()}
                       >
-                        Go back
+                        Voltar
                       </button>
                     </div>
                   )}
@@ -334,14 +334,14 @@ export function PopupWidget() {
                       </svg>
 
                       <h3 className="text-xl text-red-400 py-7">
-                        Oops, Something went wrong!
+                        Oops, algo deu errado!
                       </h3>
                       <p className="text-gray-700 md:px-3">{Message}</p>
                       <button
                         className="mt-6 text-indigo-600 focus:outline-none"
                         onClick={() => reset()}
                       >
-                        Go back
+                        Voltar
                       </button>
                     </div>
                   )}
