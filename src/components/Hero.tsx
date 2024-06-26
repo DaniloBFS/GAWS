@@ -47,33 +47,34 @@ export const Hero = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-            <div className="pt-2 text-gray-400 dark:text-gray-400 flex justify-center items-center">
-              <Image
-                src="/img/brands/fiat.svg.png"
-                alt="N"
-                width="150"
-                height="320"
-                className="w-30"
-              />                
-            </div>
-            <div className="text-gray-400 dark:text-gray-400 flex justify-center items-center">
-              <Image
-                src="/img/brands/carol.svg.png"
-                alt="N"
-                width="300"
-                height="280"
-                className="w-30"
-              />      
-            </div>
-            <div className="text-gray-400 dark:text-gray-400 flex justify-center items-center">
-              <Image
-                src="/img/brands/splash.png"
-                alt="N"
-                width="240"
-                height="300"
-                className="w-30"
-              />      
-            </div>
+          <div className="pt-2 text-gray-400 dark:text-gray-400 flex justify-center items-center mb-8 md:mb-4 lg:m-2">
+            <Image
+              src="/img/brands/fiat.svg.png"
+              alt="N"
+              width="150"
+              height="320"
+              className="w-30"
+            />                
+          </div>
+          <div className="text-gray-400 dark:text-gray-400 flex justify-center items-center mb-8 md:mb-4 lg:m-2">
+            <Image
+              src="/img/brands/carol.svg.png"
+              alt="N"
+              width="300"
+              height="280"
+              className="w-30"
+            />      
+          </div>
+          <div className="text-gray-400 dark:text-gray-400 flex justify-center items-center mb-8 md:mb-4 lg:m-2">
+            <Image
+              src="/img/brands/splash.png"
+              alt="N"
+              width="240"
+              height="300"
+              className="w-30"
+            />      
+          </div>
+
           </div>
         </div>
       </Container>
