@@ -161,7 +161,7 @@ export function PopupWidget() {
                           id="full_name"
                           placeholder="Seu nome"
                           {...register("name", {
-                            required: "Full name is required",
+                            required: "Digite seu nome completo",
                             maxLength: 80,
                           })}
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
@@ -188,7 +188,7 @@ export function PopupWidget() {
                           type="email"
                           id="email"
                           {...register("email", {
-                            required: "Enter your email",
+                            required: "Digite seu email",
                             pattern: {
                               value: /^\S+@\S+$/i,
                               message: "Por favor insira um email valido",
