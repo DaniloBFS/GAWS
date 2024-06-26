@@ -13,8 +13,8 @@ export const Testimonials = () => {
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              "A abordagem personalizada fez toda a diferença para o nosso negócio! 
-              A equipe realmente entendeu nossas <Mark>necessidades e superou nossas expectativas</Mark>."
+              A abordagem personalizada fez toda a diferença para o nosso negócio! 
+              A equipe realmente entendeu nossas <Mark>necessidades e superou nossas expectativas</Mark>.
             </p>
 
             <Avatar
@@ -27,9 +27,9 @@ export const Testimonials = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-            "Os resultados foram incríveis! 
+            Os resultados foram incríveis! 
             A automação de processos e a estratégia de marketing aumentaram nossas vendas significativamente. 
-            <Mark>Recomendo demais!</Mark>"
+            <Mark>Recomendo demais!</Mark>
             </p>
 
             <Avatar
@@ -42,8 +42,8 @@ export const Testimonials = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-            "Excelente trabalho! O plano de ação criado para nossa empresa foi assertivo e trouxe resultados concretos em pouco tempo. 
-            <Mark>Estamos muito satisfeitos!</Mark>"
+            Excelente trabalho! O plano de ação criado para nossa empresa foi assertivo e trouxe resultados concretos em pouco tempo. 
+            <Mark>Estamos muito satisfeitos!</Mark>
             </p>
 
             <Avatar
