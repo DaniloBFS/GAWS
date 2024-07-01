@@ -16,18 +16,18 @@ const benefitOne = {
   image: benefitOneImg,
   bullets: [
     {
-      title: "Entenda o cliente",
-      desc: "Conosco, você poderá entender o que o cliente deseja.",
+      title: "Onboarding Estratégico",
+      desc: "Conosco, você terá todo um estudo do seu negócio para juntos desenvolvermos um plano de ação estratégico personalizado.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Impulsione o seu alcance",
-      desc: "Faça com que seus cliente visitem e conheçam seu produto",
+      title: "Resultado Crescente",
+      desc: "Aqui na Gawes focamos sempre no crescimento dos nossos parceiros ao longo prazo",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Mantenha o cliente",
-      desc: "Criamos estrategias para que, além de ser alcançado, o cliente permaneça.",
+      title: "Parceria",
+      desc: "Buscamos parceiros que tenham sede por resultado e não medem esforços para alcançalos.",
       icon: <CursorArrowRaysIcon />,
     },
   ],
@@ -39,20 +39,20 @@ const benefitTwo = {
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Na palma da mão",
-      desc: "Os clientes saberão e conhecerão seu produto do conforto de casa.",
+      title: "Design Criativo",
+      desc: "Transforme sua presença online e descubra insights valiosos sobre sua marca e seu público-alvo. Desde a criação de uma identidade digital cativante até o direcionamento estratégico de conteúdo.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Conhecimento técnico",
-      desc: "Conte com uma equipe altamente capacitada.",
+      title: "Tráfego Pago",
+      desc: "Atraia mais clientes locais, aumente sua visibilidade e impulsione seu crescimento com estratégias de tráfego pago e geolocalização para transformação digital do seu negócio.",
       icon: <AdjustmentsHorizontalIcon />,
     },
-    // {
-    //   title: "",
-    //   desc: "Nextly comes with a zero-config light & dark mode. ",
-    //   icon: <SunIcon />,
-    // },
+    {
+      title: "Social Media",
+      desc: "Eleve sua marca ao próximo nível, reinvente sua presença online, conquiste a atenção do seu público-alvo através de conteúdo estratégico e aumente sua autoridade no mercado.",
+      icon: <SunIcon />,
+    },
   ],
 };
 

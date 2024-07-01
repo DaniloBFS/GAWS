@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <SectionTitle
         preTitle="VANTAGENS GAWS"
-        title="Porque você deveria nos contatar"
+        title="Porque você deve nos contatar"
       >
         Somos especialistas em Tráfego Pago, Design, 
         Automação de Processos e Social Mídia, oferecendo 
@@ -36,14 +36,14 @@ export default function Home() {
 
       <Video videoId="fZ0D0cnR88E" />
       */}
-      <SectionTitle
+      {/* <SectionTitle
         preTitle="Depoimentos"
         title="Veja o que nossos clientes tem a dizer"
       >
         
       </SectionTitle>
 
-      <Testimonials />
+      <Testimonials /> */}
 {/* 
       <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
