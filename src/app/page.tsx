@@ -11,7 +11,10 @@ import { benefitOne, benefitTwo } from "@/components/data";
 export default function Home() {
   return (
     <Container>
+       <section id="home">
       <Hero />
+      </section>
+      <section id="solucoes">
       <SectionTitle
         preTitle="VANTAGENS GAWS"
         title="Porque você deve nos contatar"
@@ -22,8 +25,10 @@ export default function Home() {
       </SectionTitle>
 
       <Benefits data={benefitOne} />
+      </section>
+      <section id="sobre">
       <Benefits imgPos="right" data={benefitTwo} />
-
+      </section>
       {/*Seção para vídeo caso necessário
       <SectionTitle
         preTitle="Watch a video"
@@ -51,7 +56,9 @@ export default function Home() {
       </SectionTitle>
 
       <Faq /> */}
+      <section id="contato">
       <Cta />
+      </section>
     </Container>
   );
 }

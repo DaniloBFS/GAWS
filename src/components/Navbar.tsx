@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
+import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
 export const Navbar = () => {
   const navigation = [
-    "Home",
-    "Sobre",
-    "Soluções",
-    "Contato",
+    { name: "Home", href: "#home" },
+    { name: "Soluções", href: "#solucoes" },
+    { name: "Sobre", href: "#sobre" },
+    { name: "Contato", href: "#contato" },
   ];
 
   return (
@@ -60,11 +60,11 @@ export const Navbar = () => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href="/" className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                          {item}
+                      <Link key={index} href={item.href} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                          {item.name}
                       </Link>
                     ))}
-                    <Link href="/" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-600 rounded-md lg:ml-5">         
+                    <Link href="/#contato" className="w-full px-6 py-2 mt-3 text-center text-white bg-yellow-600 rounded-md lg:ml-5">         
                         Comece agora!
                     </Link>
                   </>
@@ -79,8 +79,8 @@ export const Navbar = () => {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href="/" className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                    {menu}
+                <Link href={menu.href} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                    {menu.name}
                 </Link>
               </li>
             ))}
@@ -88,7 +88,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="/" className="px-6 py-2 text-white bg-yellow-600 rounded-md md:ml-5">
+          <Link href="/#contato" className="px-6 py-2 text-white bg-yellow-600 rounded-md md:ml-5">
               Comece agora!
           </Link>
 
@@ -98,4 +98,3 @@ export const Navbar = () => {
     </div>
   );
 }
-

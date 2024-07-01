@@ -25,6 +25,10 @@ export function PopupWidget() {
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
   const onSubmit = async (data: any, e: any) => {
+    data.access_key = "YOUR_ACCESS_KEY_HERE"; // Adicione a chave de acesso aqui
+    data.subject = `${userName} sent a message from Nextly`;
+    data.from_name = "Nextly Template";
+    
     console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -151,14 +155,14 @@ export function PopupWidget() {
 
                       <div className="mb-4">
                         <label
-                          htmlFor="full_name"
+                          htmlFor="name"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                         >
                           Nome completo
                         </label>
                         <input
                           type="text"
-                          id="full_name"
+                          id="name"
                           placeholder="Seu nome"
                           {...register("name", {
                             required: "Digite seu nome completo",
@@ -211,79 +215,91 @@ export function PopupWidget() {
 
                       <div className="mb-4">
                         <label
-                          htmlFor="message"
+                          htmlFor="phone"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                         >
-                          Sua mensagem
+                          Telefone
                         </label>
-
-                        <textarea
-                          rows={4}
-                          id="message"
-                          {...register("message", {
-                            required: "Digite sua mensagem",
+                        <input
+                          type="tel"
+                          id="phone"
+                          {...register("phone", {
+                            required: "Digite seu telefone",
+                            maxLength: 15,
                           })}
-                          placeholder="Sua mensagem"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
-                            errors.message
+                          placeholder="(XX) XXXXX-XXXX"
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                            errors.phone
                               ? "border-red-600 focus:border-red-600 ring-red-100"
                               : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
                           }`}
-                          required
-                        ></textarea>
-                        {errors.message && (
+                        />
+
+                        {errors.phone && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.message.message as string}
+                            {errors.phone.message as string}
                           </div>
                         )}
                       </div>
-                      <div className="mb-3">
-                        <button
-                          type="submit"
-                          className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+
+                      <div className="mb-4">
+                        <label
+                          htmlFor="instagram"
+                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
                         >
-                          {isSubmitting ? (
-                            <svg
-                              className="w-5 h-5 mx-auto text-white animate-spin"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                              ></circle>
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              ></path>
-                            </svg>
-                          ) : (
-                            "Enviar mensagem"
-                          )}
-                        </button>
+                          Instagram
+                        </label>
+                        <input
+                          type="text"
+                          id="instagram"
+                          {...register("instagram", {
+                            required: "Digite seu Instagram",
+                            maxLength: 30,
+                          })}
+                          placeholder="@seuInstagram"
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                            errors.instagram
+                              ? "border-red-600 focus:border-red-600 ring-red-100"
+                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                          }`}
+                        />
+
+                        {errors.instagram && (
+                          <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                            {errors.instagram.message as string}
+                          </div>
+                        )}
                       </div>
-                      <p
-                        className="text-xs text-center text-gray-400"
-                        id="result"
+
+                      <button
+                        type="submit"
+                        className="w-full py-2 text-white bg-indigo-600 rounded-md focus:outline-none focus:ring focus:ring-indigo-100"
                       >
-                        <span>
-                          Powered by{" "}
-                          <a
-                            href="https://Web3Forms.com"
-                            className="text-gray-600"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        {isSubmitting ? (
+                          <svg
+                            className="w-5 h-5 mx-auto text-white animate-spin"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
                           >
-                            D&Q
-                          </a>
-                        </span>
-                      </p>
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v8H4z"
+                            ></path>
+                          </svg>
+                        ) : (
+                          "Enviar"
+                        )}
+                      </button>
                     </form>
                   )}
 
@@ -295,54 +311,59 @@ export function PopupWidget() {
                         className="text-green-300"
                         viewBox="0 0 100 100"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M26.6666 50L46.6666 66.6667L73.3333 33.3333M50 96.6667C43.8716 96.6667 37.8033 95.4596 32.1414 93.1144C26.4796 90.7692 21.3351 87.3317 17.0017 82.9983C12.6683 78.6649 9.23082 73.5204 6.8856 67.8586C4.54038 62.1967 3.33331 56.1283 3.33331 50C3.33331 43.8716 4.54038 37.8033 6.8856 32.1414C9.23082 26.4796 12.6683 21.3351 17.0017 17.0017C21.3351 12.6683 26.4796 9.23084 32.1414 6.88562C37.8033 4.5404 43.8716 3.33333 50 3.33333C62.3767 3.33333 74.2466 8.24998 82.9983 17.0017C91.75 25.7534 96.6666 37.6232 96.6666 50C96.6666 62.3768 91.75 74.2466 82.9983 82.9983C74.2466 91.75 62.3767 96.6667 50 96.6667Z"
+                          d="M26.6667 50L41.6667 65L73.3334 33.3333"
                           stroke="currentColor"
-                          strokeWidth="3"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM91.6667 50C91.6667 73.6 73.6 91.6667 50 91.6667C26.4 91.6667 8.33337 73.6 8.33337 50C8.33337 26.4 26.4 8.33333 50 8.33333C73.6 8.33333 91.6667 26.4 91.6667 50Z"
+                          fill="currentColor"
                         />
                       </svg>
-                      <h3 className="py-5 text-xl text-green-500">
-                          Mensagem enviada!
+                      <h3 className="p-5 text-2xl font-semibold text-gray-700">
+                        Mensagem Enviada com Sucesso
                       </h3>
-                      <p className="text-gray-700 md:px-3">{Message}</p>
-                      <button
-                        className="mt-6 text-indigo-600 focus:outline-none"
-                        onClick={() => reset()}
-                      >
-                        Voltar
-                      </button>
+                      <p className="text-gray-500">
+                        Obrigado por entrar em contato conosco. Responderemos em
+                        breve!
+                      </p>
                     </div>
                   )}
 
                   {isSubmitSuccessful && !isSuccess && (
-                    <div className="flex flex-col items-center justify-center h-full text-center text-white rounded-md">
+                    <div className="text-center text-red-400">
                       <svg
                         width="60"
                         height="60"
-                        viewBox="0 0 97 97"
-                        className="text-red-400"
+                        viewBox="0 0 100 100"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        className="mx-auto"
                       >
                         <path
-                          d="M27.9995 69C43.6205 53.379 52.3786 44.621 67.9995 29M26.8077 29L67.9995 69M48.2189 95C42.0906 95 36.0222 93.7929 30.3604 91.4477C24.6985 89.1025 19.554 85.6651 15.2206 81.3316C10.8872 76.9982 7.44975 71.8538 5.10454 66.1919C2.75932 60.53 1.55225 54.4617 1.55225 48.3333C1.55225 42.205 2.75932 36.1366 5.10454 30.4748C7.44975 24.8129 10.8872 19.6684 15.2206 15.335C19.554 11.0016 24.6985 7.56418 30.3604 5.21896C36.0222 2.87374 42.0906 1.66667 48.2189 1.66667C60.5957 1.66667 72.4655 6.58333 81.2172 15.335C89.9689 24.0867 94.8856 35.9566 94.8856 48.3333C94.8856 60.7101 89.9689 72.58 81.2172 81.3316C72.4655 90.0833 60.5957 95 48.2189 95Z"
-                          stroke="CurrentColor"
-                          strokeWidth="3"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50ZM91.6667 50C91.6667 73.6 73.6 91.6667 50 91.6667C26.4 91.6667 8.33337 73.6 8.33337 50C8.33337 26.4 26.4 8.33333 50 8.33333C73.6 8.33333 91.6667 26.4 91.6667 50Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M63.3334 36.6667L50 50M50 50L36.6667 63.3333M50 50L63.3334 63.3333M50 50L36.6667 36.6667"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
 
-                      <h3 className="text-xl text-red-400 py-7">
-                        Oops, algo deu errado!
+                      <h3 className="text-2xl font-semibold">
+                        {Message || "Oops! Alguma coisa deu errado..."}
                       </h3>
-                      <p className="text-gray-700 md:px-3">{Message}</p>
-                      <button
-                        className="mt-6 text-indigo-600 focus:outline-none"
-                        onClick={() => reset()}
-                      >
-                        Voltar
-                      </button>
+                      <p className="text-gray-500">Tente novamente mais tarde.</p>
                     </div>
                   )}
                 </div>
