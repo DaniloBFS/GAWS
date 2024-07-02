@@ -10,7 +10,7 @@ export const Cta = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  const submit = (e) => {
+  const submit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     fetch("https://formcarry.com/s/qKTNg911VCS", {
