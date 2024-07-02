@@ -8,6 +8,8 @@ import { Video } from "@/components/Video";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
+import ContactForm from "@/components/ContactForm"; // Caminho correto para o arquivo ContactForm
+
 
 import { benefitOne, benefitTwo } from "@/components/data";
 export default function Home() {
@@ -60,7 +62,7 @@ export default function Home() {
       <Faq /> */}
       <section id="contato">
       <Cta />
-      
+      <ContactForm />
       </section>
     </Container>
   );
