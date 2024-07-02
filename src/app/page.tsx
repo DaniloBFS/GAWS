@@ -1,3 +1,5 @@
+"use client"; 
+
 import { Container } from "@/components/Container";
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
