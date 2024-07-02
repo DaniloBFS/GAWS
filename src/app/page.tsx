@@ -60,6 +60,7 @@ export default function Home() {
       <Faq /> */}
       <section id="contato">
       <Cta />
+      
       </section>
     </Container>
   );
