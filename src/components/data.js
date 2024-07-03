@@ -22,7 +22,7 @@ const benefitOne = {
     },
     {
       title: "Resultado Crescente",
-      desc: "Aqui na Gawes focamos sempre no crescimento dos nossos parceiros ao longo prazo",
+      desc: "Aqui na Gaws focamos sempre no crescimento dos nossos parceiros ao longo prazo",
       icon: <ChartBarSquareIcon />,
     },
     {
