@@ -1,1 +1,1 @@
-Website para a empresa GAWS AGENCY.
+Este é o website oficial da GAWS AGENCY, desenvolvido com Next.js e Tailwind CSS para proporcionar uma experiência rápida, responsiva e moderna. O projeto foi construído com foco em desempenho, usabilidade e design otimizado, garantindo uma navegação fluida e intuitiva para os usuários.
